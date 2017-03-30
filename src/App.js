@@ -1,17 +1,9 @@
 //External Libraries
 import marked from 'marked';
-//React
+//React + Components
 import React, { Component } from 'react';
 import './App.css';
-
-function markdownToHTML (md){
-  return {__html:marked(md)};
-}
-
-const Output = (props) => {
-  return <div dangerouslySetInnerHTML={ markdownToHTML(props.value) } />
-  // return <div>{props.value}</div>;
-};
+import Output from './components/output.js';
 
 
 class App extends Component {
@@ -32,12 +24,8 @@ class App extends Component {
             value={this.state.value}
             onChange={ (e) => { this.setState({ value: e.target.value }) } }
           ></textarea>
-         
-          <div className="output">
-            <h2 className="output_title">Output</h2>
-            <Output value={marked(this.state.value)}/>
-            {/*<div> {this.state.value} </div>*/}
-         </div>
+        
+          <Output value={marked(this.state.value)}/>
 
         </div>        
       </div> 
