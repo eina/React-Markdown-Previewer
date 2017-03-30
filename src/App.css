@@ -1,1 +1,14 @@
-/* App Specific Styling */
+.app_title {
+  text-align: center;
+}
+
+.input {
+  min-height: 650px;
+}
+
+blockquote {
+  margin: 1em;
+  padding-left: 0.5em;
+  border-left: 3px solid #aaa;
+  background: #eee;  
+}
